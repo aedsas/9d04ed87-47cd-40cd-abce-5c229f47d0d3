@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## TODO
+- Create Next.js boilerplate
+- Define and implement app architecture
+- Mock functionality per page, including look and feel
+- Implement CRUD for Countries
+- Implement in18 for content based on selected country
+- Implement Auth and Register
+- Create Seeder for Countries
+Implement more robust and scalable authorization
 ## Getting Started
 
 First, run the development server:
