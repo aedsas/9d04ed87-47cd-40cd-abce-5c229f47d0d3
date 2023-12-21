@@ -1,0 +1,51 @@
+@import '@/app/styles/_variables.scss';
+
+.languages-wrapper {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+
+  .nav-item {
+    .nav-link {
+      font-family: 'Anybody', sans-serif;
+      font-weight: 600;
+      font-size: 2.4rem;
+      color: map-get($brandColors, chg-black);
+    }
+  }
+}
+.tab-content {
+  text-align: left;
+
+  .language-item {
+    cursor: pointer;
+    min-height: 80px;
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+
+    .language-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+    }
+    p,
+    .flag {
+      display: inline-block;
+      vertical-align: top;
+    }
+    p {
+      align-self: center;
+      width: 80%;
+      padding: 20px 5px 5px 5px;
+    }
+    .flag {
+      width: 20%;
+      height: auto;
+      border: 1px solid rgba(230, 230, 230);
+      //min-height: 45px;
+    }
+  }
+}
