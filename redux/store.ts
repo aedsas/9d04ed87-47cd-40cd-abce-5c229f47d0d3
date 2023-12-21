@@ -1,7 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
+import counterReducer from '@/redux/counterSlice';
+import localeReducer from '@/redux/localeSlice';
+import { saveState } from '@/redux/localstorage';
 
 export const store = configureStore({
-  reducer: {}
+  reducer: {
+    counter: counterReducer,
+    locale: localeReducer
+  }
+});
+
+store.subscribe(() => {
+  saveState(store.getState());
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
