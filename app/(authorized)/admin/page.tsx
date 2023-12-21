@@ -1,39 +1,16 @@
-import Table from 'react-bootstrap/Table';
-export default function Admin() {
+import MainMenu from '@/components/Menu/main-menu';
+import UserList from '@/components/User/UserList';
+
+export default async function Admin() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-          <h1>Admin Panel</h1>
-          <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </Table>
+    <div className="flex items-center justify-center w-full mb-[100px]">
+      <div className="z-10 w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl">
+        <div className="flex flex-col items-center justify-center back-color chg-white p-5">
+          <MainMenu></MainMenu>
+          <h1>Users</h1>
+          <UserList></UserList>
+        </div>
       </div>
-    </main>
-  )
+    </div>
+  );
 }

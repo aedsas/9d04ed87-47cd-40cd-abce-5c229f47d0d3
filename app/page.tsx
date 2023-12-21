@@ -1,33 +1,39 @@
-"use client";
-
-// import Image from 'next/image'
-import Button from 'react-bootstrap/Button';
-import Tabs from 'react-bootstrap/Tabs';
-import Tab from 'react-bootstrap/Tab';
-import Link from "next/link";
+import './styles/home.scss';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between text-sm lg:flex">
-        <h1 className="">Hello and welcome!</h1>
-        <p>
-          This tutorial will guide you through the technical exercise. The main
-          goal of this app is to demonstrate sufficient command of the React
-          ecosystem. The selected stack includes, but is not limited to, the
-          technologies used by CHAGOS.
-        </p>
-        <p>
-          The selected tech includes some technologies that may be redundant in
-          a production environment (e.g., Boostrap and Tailwind). This is by
-          design, as the goal of this app is to showcase capabilities.
-        </p>
-        <p>
-          <Link href="/login" title="Start!">
-            Click here to get started!
+    <main className="flex items-center justify-center w-full mb-[100px]">
+      <div className="z-10 w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl">
+        <div className="border-b back-color chg-white border-gray-200 px-5 py-6">
+          <Image
+            src="/logo.png"
+            priority
+            alt="Logo"
+            className="m-auto mb-[40px] main-logo"
+            width={200}
+            height={200}
+          />
+          <h1 className="text-center txt-color chg-green">Hello and welcome</h1>
+          <p className="txt">
+            This tutorial will guide you through the technical exercise. The
+            main goal of this app is to demonstrate sufficient command of the
+            React ecosystem. The selected stack includes, but is not limited to,
+            the technologies used by chg.
+          </p>
+          <p>
+            The selected tech includes some technologies that may be redundant
+            in a production environment. This is by design, as the goal of this
+            app is to showcase capabilities.
+          </p>
+        </div>
+        <div className="flex w-full justify-center py-5">
+          <Link href="/login" title="Start!" className="chg-button">
+            <span className="font-bold">Click here to get started!</span>
           </Link>
-        </p>
+        </div>
       </div>
     </main>
-  )
+  );
 }
