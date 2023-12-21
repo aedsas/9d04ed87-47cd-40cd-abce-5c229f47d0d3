@@ -1,10 +1,9 @@
 /* Mixins */
-@mixin font($font, $font-size, $font-weight, $font-style, $font-line, $font-space, $font-color){
+@mixin font($font, $font-size, $font-weight, $font-style, $font-line, $font-space){
   font-family:$font;
   font-size: $font-size;
   font-weight:$font-weight;
   font-style:$font-style;
   line-height:$font-line;
   letter-spacing:$font-space;
-  color:$font-color;
 }

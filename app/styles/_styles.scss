@@ -1,87 +1,96 @@
 /*------------------------------------*\
   #Implementation of a simple Design System
 \*------------------------------------*/
-@import "mixings";
+@import 'mixings';
+@import 'variables';
 
-.txt{
-  @include reset;
-  font-family:$font;
-  font-size: $font-size;
-  font-weight:$font-weight;
-  font-style:$font-style;
-  line-height:$font-line;
-  letter-spacing:$font-space;
-  color:$font-color;
-
-  // Sizes
-  @each $name, $size, $lh, $lg, $md, $sm in $fsizes {
-    &.fs-#{$name} {
-      font-size: $size;
-      @if($lg){
-        line-height:$lh;
-      }
-      @if($lg){
-        @media (max-width:1200px) {font-size: $lg;}
-      }
-      @if($md){
-        @media (max-width:1200px) {font-size: $md;}
-      }
-      @if($sm){
-        @media (max-width:1200px) {font-size: $sm;}
-      }
-    }
+h1,
+.h1-header {
+  @include font($font, 3.5rem, 600, $font-style, $font-line, $font-space);
+  margin-bottom: 1.5rem;
+  @media (max-width: 1200px) {
+    top: 14px;
   }
+}
+h2,
+.h2-header {
+  @include font($font, 3rem, 600, $font-style, $font-line, $font-space);
+  margin-bottom: 1.5rem;
+}
+h3,
+.h3-header {
+  @include font(
+    $font,
+    2.5rem,
+    $font-weight,
+    $font-style,
+    $font-line,
+    $font-space
+  );
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+}
+h4,
+h5,
+h6 .h4-header,
+.h5-header,
+.h6-header {
+  @include font($font, 2rem, $font-weight, 'italic', $font-line, $font-space);
+  margin-bottom: 1.5rem;
+}
+p,
+a {
+  @include font(
+    $font,
+    1.6rem,
+    $font-weight,
+    $font-style,
+    $font-line,
+    $font-space
+  );
+}
+p {
+  margin-bottom: 2rem;
+}
+a:hover {
+  color: map-get($brandColors, chg-purple) !important;
+}
+.chg-toast {
+  font-size: 1.4rem;
+}
+.chg-button {
+  cursor: pointer;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: map-get($brandColors, chg-black);
+  transition: all 800ms ease;
 
-  // Weights
-  @each $weight in $fweights {
-    &.fw-#{$weight} {
-      font-weight: $weight;
-
-      strong{
-        font-weight: 700;
-      }
-    }
+  span {
+    color: map-get($brandColors, chg-white);
   }
+  &:hover {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: map-get($brandColors, chg-green);
+  }
+  &.small-button {
+    padding: 0.1rem 0.5rem;
+    color: map-get($brandColors, chg-white);
+  }
+}
 
-  // Colors
+// Coloring Helpers classes
+.txt-color {
   @each $element, $color in $brandColors {
-    &.#{"" + $element} {
+    &.#{'' + $element} {
       color: $color;
     }
   }
-
-  // Styles
-  &.italic{
-    font-style: italic;
-  }
-  &.upper{
-    text-transform: uppercase;
-  }
 }
-
-// Background Colors
-.back-color{
+.back-color {
   @each $element, $color in $brandColors {
-    &.#{"" + $element} {
+    &.#{'' + $element} {
       background-color: $color;
     }
   }
-}
-
-
-h1,
-.h1-header{
-
-}
-h2,
-.h2-header{
-
-}
-h3,
-.h3-header{
-
-}
-h4, h5, h6
-.h4-header, .h5-header, .h6-header{
-
 }
