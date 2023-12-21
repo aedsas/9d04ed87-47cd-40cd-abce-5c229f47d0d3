@@ -1,3 +1,12 @@
-.chagos-form {
-  display: none;
+.chg-form {
+  .chg-button {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+.social-login {
+  min-width: 240px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 25px auto;
 }

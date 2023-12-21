@@ -1,16 +1,15 @@
 'use client';
 
-import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 
 export default function LinkedinLogin() {
   const handleSignIn = () => {
-    signIn('linkedin');
+    signIn('linkedin').then((r) => console.log(r));
   };
 
   return (
     <>
-      <button onClick={handleSignIn}>
+      <button className={'social-login'} onClick={handleSignIn}>
         <img
           style={{ height: '100%', width: '100%' }}
           src={

@@ -1,8 +1,10 @@
 'use client';
 
+import './form.scss';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
-import LoadingDots from '@/components/loading-dots';
+import LoadingDots from '@/components/LoginForm/loading-dots';
+import LinkedInLogin from '@/components/LoginForm/linkedin-login';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -55,9 +57,9 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
           });
         }
       }}
-      className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 sm:px-16"
+      className="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16"
     >
-      <div>
+      <div className="pb-[2rem]">
         <label
           htmlFor="email"
           className="block text-[1.4rem] text-gray-600 uppercase"
@@ -68,16 +70,17 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
           id="email"
           name="email"
           type="email"
-          placeholder="john@yourcompany.com"
+          placeholder="andres@chg.com"
           autoComplete="email"
           required
-          className="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
+          className="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border
+          border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
         />
       </div>
-      <div>
+      <div className="pb-[2.5rem]">
         <label
           htmlFor="password"
-          className="block text-xs text-gray-600 uppercase"
+          className="block text-[1.4rem] text-gray-600 uppercase"
         >
           Password
         </label>
@@ -86,39 +89,49 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
           name="password"
           type="password"
           required
-          className="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
+          className="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border
+          border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
         />
       </div>
-      <button
-        disabled={loading}
-        className={`${
-          loading
-            ? 'cursor-not-allowed border-gray-200 bg-gray-100'
-            : 'border-black bg-black text-white hover:bg-white hover:text-black'
-        } flex h-10 w-full items-center justify-center rounded-md border text-sm transition-all focus:outline-none`}
-      >
-        {loading ? (
-          <LoadingDots color="#808080" />
+      <div className={'text-center'}>
+        <button
+          disabled={loading}
+          className={`${
+            loading ? 'cursor-not-allowed border-gray-200 bg-gray-100' : ''
+          } chg-button`}
+        >
+          {loading ? (
+            <LoadingDots color="#808080" />
+          ) : (
+            <span className="block text-[1.4rem] text-gray-600 uppercase">
+              {type === 'login' ? 'Sign In' : 'Sign Up'}
+            </span>
+          )}
+        </button>
+        <LinkedInLogin></LinkedInLogin>
+        {type === 'login' ? (
+          <p className="text-center text-gray-600">
+            You don&apos;t have a chg account yet?{' '}
+            <Link
+              href="/register"
+              className="txt-color chg-green text-[1.5rem] text-bold text-uppercase text-decoration-underline"
+            >
+              Sign up here.
+            </Link>{' '}
+          </p>
         ) : (
-          <p>{type === 'login' ? 'Sign In' : 'Sign Up'}</p>
+          <p className="text-center text-gray-600">
+            You already have an account?{' '}
+            <Link
+              href="/login"
+              className="txt-color chg-green text-[1.5rem] text-bold text-uppercase text-decoration-underline"
+            >
+              Sign in here
+            </Link>{' '}
+            instead.
+          </p>
         )}
-      </button>
-      {type === 'login' ? (
-        <p className="text-center text-sm text-gray-600">
-          You don&apos;t have a CHAGOS account yet?{' '}
-          <Link href="/register" className="font-semibold text-gray-800">
-            Sign up here.
-          </Link>{' '}
-        </p>
-      ) : (
-        <p className="text-center text-sm text-gray-600">
-          You already have an account?{' '}
-          <Link href="/login" className="font-semibold text-gray-800">
-            Sign in here
-          </Link>{' '}
-          instead.
-        </p>
-      )}
+      </div>
     </form>
   );
 }

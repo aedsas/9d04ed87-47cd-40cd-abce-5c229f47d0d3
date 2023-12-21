@@ -1,18 +1,17 @@
-import { auth } from '@/app/auth';
+import { useSession } from "next-auth/react"
 
 export default async function AuthStatus() {
-  const session = await auth;
-  return session?.user
-}
+  const { data: session } = useSession();
 
-// export default async function AuthStatus() {
-//   console.log(getSession().user)
-//
-//   return (
-//     <div className="absolute top-5 w-full flex justify-center items-center">
-//       <p className="text-sm">
-//           Signed in as
-//       </p>
-//     </div>
-//   );
-// }
+  if(session) {
+    return <>
+      {
+        // @ts-ignore
+        session.user.email
+      }
+    </>
+  }
+  return <>
+    Not signed in <br/>
+  </>
+}

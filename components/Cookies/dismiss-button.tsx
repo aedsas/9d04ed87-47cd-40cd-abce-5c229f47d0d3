@@ -8,13 +8,13 @@ export default function DismissButton() {
 
   return (
     <button
-      className="contents underline text-blue-600"
+      className="chg-button small-button"
       onClick={() => {
-        Cookies.set('template-banner-hidden', 'true');
+        Cookies.set('cookies-banner-hidden', 'true');
         router.refresh();
       }}
     >
-      Dismiss →
+      Click here to accept
     </button>
   );
 }
