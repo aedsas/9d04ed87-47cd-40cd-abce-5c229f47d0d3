@@ -2,7 +2,6 @@ import { auth } from '@/app/auth';
 
 export default async function AuthStatus() {
   const session = await auth;
-  console.log(session);
   return session?.user
 }
 

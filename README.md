@@ -22,6 +22,10 @@ pnpm dev
 # or
 bun dev
 ```
+https://www.linkedin.com/developers/apps/
+
+prisma db push
+npx prisma db seed
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

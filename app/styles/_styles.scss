@@ -1,0 +1,87 @@
+/*------------------------------------*\
+  #Implementation of a simple Design System
+\*------------------------------------*/
+@import "mixings";
+
+.txt{
+  @include reset;
+  font-family:$font;
+  font-size: $font-size;
+  font-weight:$font-weight;
+  font-style:$font-style;
+  line-height:$font-line;
+  letter-spacing:$font-space;
+  color:$font-color;
+
+  // Sizes
+  @each $name, $size, $lh, $lg, $md, $sm in $fsizes {
+    &.fs-#{$name} {
+      font-size: $size;
+      @if($lg){
+        line-height:$lh;
+      }
+      @if($lg){
+        @media (max-width:1200px) {font-size: $lg;}
+      }
+      @if($md){
+        @media (max-width:1200px) {font-size: $md;}
+      }
+      @if($sm){
+        @media (max-width:1200px) {font-size: $sm;}
+      }
+    }
+  }
+
+  // Weights
+  @each $weight in $fweights {
+    &.fw-#{$weight} {
+      font-weight: $weight;
+
+      strong{
+        font-weight: 700;
+      }
+    }
+  }
+
+  // Colors
+  @each $element, $color in $brandColors {
+    &.#{"" + $element} {
+      color: $color;
+    }
+  }
+
+  // Styles
+  &.italic{
+    font-style: italic;
+  }
+  &.upper{
+    text-transform: uppercase;
+  }
+}
+
+// Background Colors
+.back-color{
+  @each $element, $color in $brandColors {
+    &.#{"" + $element} {
+      background-color: $color;
+    }
+  }
+}
+
+
+h1,
+.h1-header{
+
+}
+h2,
+.h2-header{
+
+}
+h3,
+.h3-header{
+
+}
+h4, h5, h6
+.h4-header, .h5-header, .h6-header{
+
+}

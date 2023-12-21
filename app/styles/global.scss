@@ -1,0 +1,95 @@
+/**
+* CONTENTS
+*
+* GENERAL & TOOLS
+* Variables..................Globally-available variables and config.
+* Fontfaces..................Globally-available fontfaces.
+* Mixins.....................Useful mixins.
+* Styles.....................Text styles and Text helpers.
+* Layout.....................General Styles, Conteiner level and resets.
+* Common.....................Common elements that are used in many pages.
+*
+* Sections
+* Footer, Header and Menu....Main sections, present on almost all pages
+*
+* COMPONENTS
+* Reusable components........Sliders, Popups, etc.
+*
+* FORMS
+* Forms and inputs...........Form related styles, including plugins
+*
+* PAGES
+* Main pages.................Top level content
+*
+* CONTENT PAGES
+* Specific content pages.....Slug dependent content as blog post or product
+*
+* SHOP
+* Shop related styles........From cart to payment confirmation
+*
+*/
+
+// General
+@import "variables";
+@import "general/fontfaces";
+@import "general/mixings";
+@import "general/styles";
+@import "general/layout";
+@import "general/common";
+
+
+
+
+
+
+@import 'app/customBootstrap';
+@import "mixings";
+@import "styles";
+
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*------------------------------------*\
+  #Typography Defaults
+\*------------------------------------*/
+
+$font:'Anybody', sans-serif;
+$font-size:10px;
+$font-line:1.4;
+$font-weight:normal;
+$font-style:normal;
+$font-space:0.2rem;
+$font-color:map-get($brandColors, ax_black);
+$font-link-color:map-get($brandColors, ax_grey);
+
+/*------------------------------------*\
+  #Layout Defaults
+\*------------------------------------*/
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family: 'Anybody', sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
