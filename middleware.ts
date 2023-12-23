@@ -14,7 +14,6 @@ export default async function middleware(req: NextRequest) {
   } else if (!session && (path === '/dashboard' || path === '/admin')) {
     return NextResponse.redirect(new URL("/login", req.url));
   } else if (session && (path === "/login" || path === "/register")) {
-    // Remove access to unnecessary pages when already logged in
     return NextResponse.redirect(new URL("/dashboard", req.url));
   }
 

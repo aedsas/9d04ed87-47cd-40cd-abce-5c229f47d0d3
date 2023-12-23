@@ -1,0 +1,30 @@
+@import '@/app/styles/_variables.scss';
+
+.progress-container {
+  display: flex;
+  min-width: 100%;
+  margin: 0 0 15px 0;
+
+  svg {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 2px solid map-get($brandColors, chg-green);
+    color: map-get($brandColors, chg-green);
+    border-radius: 0.4rem;
+
+    &:hover {
+      background-color: map-get($brandColors, chg-green);
+      color: map-get($brandColors, chg-white);
+    }
+  }
+  .progress{
+    flex-grow: 90;
+    padding: 0 10px;
+  }
+  .progress,
+  .progress-bar{
+    height: 50px;
+    font-size: 2rem;
+  }
+}

@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import Form from '@/components/LoginForm/form';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Login | chg Web APP',
+  description: 'Welcome! To continue you must log in.'
+};
 
 export default function Login() {
   return (
@@ -17,7 +23,7 @@ export default function Login() {
               height={80}
             />
           </Link>
-          <h3>Please sign in to continue</h3>
+          <h1>Please sign in to continue</h1>
           <p className="w-[80%] text-gray-500">
             To simulate a business application with a customer portal the rest
             of the exercise can only be accessed by authenticated users.

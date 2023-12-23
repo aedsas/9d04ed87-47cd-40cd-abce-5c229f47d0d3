@@ -1,7 +1,7 @@
 'use client';
 
 import './main-menu.scss';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -10,42 +10,73 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { RootState } from '@/redux/store';
 import AuthStatus from '@/components/Menu/auth-status';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SignOut from '@/components/Menu/sign-out';
+import { loadState } from '@/redux/localstorage';
+import { setLocale } from '@/redux/localeSlice';
+import {
+  HomeIcon,
+  ChartBarSquareIcon,
+  AdjustmentsHorizontalIcon,
+  UserCircleIcon
+} from '@heroicons/react/24/solid'
 
-export default function MainMenu() {
+// @ts-ignore
+export default function MainMenu({ active }) {
   const locale = useSelector((state: RootState) => state.locale.value);
+  const persistedState = loadState();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const currentLocale = persistedState?.locale.value ?? 'DE';
+    if (currentLocale !== null) {
+      const parsedValue = currentLocale;
+      dispatch(setLocale(parsedValue));
+    }
+  }, [dispatch]);
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary w-100" id="mainMenu">
       <Container>
-        <Navbar.Brand><b>CHG APP</b></Navbar.Brand>
+        <Navbar.Brand><b>CHG APP {active}</b></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link href={'/'} title={'Home'} className={'nav-link'}>
-              Home
+              <HomeIcon /> <span>Home</span>
             </Link>
-            <Link href={'/dashboard'} title={'Dashboard'} className={'nav-link'}>
-              Dashboard
+            <Link
+              href={'/dashboard'}
+              title={'Dashboard'}
+              className={active === 'dashboard' ? 'nav-link active' : 'nav-link'}
+            >
+              <ChartBarSquareIcon /> Dashboard
             </Link>
-            <Link href={'/admin'} title={'Admin'} className={'nav-link'}>
-              Admin
+            <Link
+              href={'/admin'}
+              title={'Admin'}
+              className={active === 'admin' ? 'nav-link active' : 'nav-link'}
+            >
+              <AdjustmentsHorizontalIcon /> <span>Admin</span>
             </Link>
             <NavDropdown title="Account" id="collapsible-nav-dropdown">
-              <NavDropdown.Item>
+              <NavDropdown.Item className={'nav-link'}>
                 <Suspense fallback="Loading...">
-                  <AuthStatus />
+                  <UserCircleIcon /> <span><AuthStatus /></span>
                 </Suspense>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item>
+              <NavDropdown.Item className={'nav-link'}>
                 <SignOut />
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Link href={'/localization'} title={'Localization'} className={'nav-link'}>
+            <Link
+              href={'/localization'}
+              title={'Localization'}
+              className={active === 'localization' ? 'nav-link active' : 'nav-link'}
+            >
               <div className={'current-locale'}>
                 <p className="p-0 m-0">({locale})</p>
                 <Image

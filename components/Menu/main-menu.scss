@@ -1,5 +1,24 @@
+@import '@/app/styles/_variables.scss';
+
 #mainMenu{
   font-size: 1.4rem;
+
+  .nav-link {
+    display: flex;
+    padding: 10px 15px;
+
+    svg {
+      padding: 0px 5px 0 0;
+      height: 1.6rem;
+    }
+    &.active {
+      color: map-get($brandColors, chg-green);
+    }
+  }
+  .dropdown-toggle::after{
+    position: relative;
+    top: 8px;
+  }
 }
 .current-locale {
   display: flex;

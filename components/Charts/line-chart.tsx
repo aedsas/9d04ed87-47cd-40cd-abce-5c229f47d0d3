@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import './line-chart.scss';
+import React, { useState, useEffect } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -20,28 +21,62 @@ ChartJS.register(
 );
 
 // @ts-ignore
-export default function LineChart({ chartData }) {
-  return (
-    <div className="chart-container">
-      <h2 style={{ textAlign: 'center' }}>Line Chart</h2>
-      <Line
-        data={{
-          labels: [
-            "2023-01",
-            "2023-02",
-            "2023-03",
-            "2023-04",
-            "2023-05",
-            "2023-06",
-            "2023-07",
+export default function LineChart() {
+  const [chartData, setChartData] = useState({
+    labels: [
+            new Date().toLocaleTimeString(),
           ],
+    datasets: [
+      {
+        label: 'Dynamic Line Chart',
+        data: [100],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1,
+        backgroundColor: "purple",
+      }
+    ]
+  });
+
+  useEffect(() => {
+    // Simulate dynamic data
+    const interval = setInterval(() => {
+      const newLabel = new Date().toLocaleTimeString();
+      const newData = Math.floor(Math.random() * 100);
+
+      setChartData((prevChartData) => {
+        // Keep a maximum of 20 data points
+        const newLabels =
+          prevChartData.labels.length >= 100
+            ? [...prevChartData.labels.slice(1), newLabel]
+            : [...prevChartData.labels, newLabel];
+
+        const newDataPoints =
+          prevChartData.datasets[0].data.length >= 100
+            ? [...prevChartData.datasets[0].data.slice(1), newData]
+            : [...prevChartData.datasets[0].data, newData];
+
+        return {
+          labels: newLabels,
           datasets: [
             {
-              data: [100, 120, 115, 134, 168, 132, 200],
-              backgroundColor: "purple",
+              ...prevChartData.datasets[0],
+              data: newDataPoints,
             },
           ],
-        }}
+        };
+      });
+    }, 2000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="chart-container">
+      <h2 style={{ textAlign: 'center' }}>Dynamic Line Chart</h2>
+      <Line
+        data={chartData}
         options={{
           plugins: {
             title: {

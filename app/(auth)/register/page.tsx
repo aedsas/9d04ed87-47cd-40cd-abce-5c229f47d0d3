@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import Form from '@/components/LoginForm/form';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Register | chg Web APP',
+  description: 'You don\'t have an account yet? You can register here.'
+};
 
 export default function Login() {
   return (
@@ -17,7 +23,7 @@ export default function Login() {
               height={80}
             />
           </Link>
-          <h3>Sign Up</h3>
+          <h1>Sign Up</h1>
           <p className="w-[80%] text-gray-500">
             Create an account with your email and password
           </p>

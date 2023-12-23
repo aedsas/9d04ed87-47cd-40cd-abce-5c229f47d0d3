@@ -1,36 +1,22 @@
 'use client';
 
 import './language-switch.scss';
-import React, { useState, useEffect } from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import Image from 'next/image';
 import { setLocale } from '@/redux/localeSlice';
 import { useDispatch } from 'react-redux';
-import { loadState } from '@/redux/localstorage';
 import { useLanguageContext } from '@/context/LanguageContext';
 import { ILanguage } from '@/components/LanguageSwitch/ILanguage';
 
 export default function LanguageSwitch() {
-  const persistedState = loadState();
   const dispatch = useDispatch();
   const { languagesData, setLanguagesData } = useLanguageContext();
+
   const handleLanguageItemClick = (event: any, language: any) => {
     event.stopPropagation();
     dispatch(setLocale(language['alpha-2']));
   };
-
-  useEffect(() => {
-    // Do something with languagesData
-  }, [languagesData]);
-
-  useEffect(() => {
-    const currentLocale = persistedState?.locale.value ?? 'DE';
-    if (currentLocale !== null) {
-      const parsedValue = currentLocale;
-      dispatch(setLocale(parsedValue));
-    }
-  }, [dispatch]);
 
   const languagesPerRegion = languagesData.reduce(
     (result: Record<string, ILanguage[]>, item: ILanguage) => {
