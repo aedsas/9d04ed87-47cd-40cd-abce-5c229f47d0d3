@@ -1,6 +1,11 @@
 # CHG App - Technical Exercise
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
+For testing purposes, this App has been deployed to the url:
+[https://chg.axioma.ai](https://chg.axioma.ai)
+
+![Deployed App](./README/home.png)
+
 ## 1. Tech Stack Used
 If you are not familiar with the different technologies used in this project, 
 please refer to the respective docs.
@@ -147,10 +152,13 @@ After running it your can open [http://localhost:3000](http://localhost:3000)
 with your browser to see the result.
 
 ### 5.2. Deploy
-Follow our deployment guides for 
+You can follow the deployment guides for 
 [Vercel](https://create.t3.gg/en/deployment/vercel), 
 [Netlify](https://create.t3.gg/en/deployment/netlify) 
 and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+The project as been tested and configured for CI/CD via Vercel:
+![Vercel Automatic Deployments](./README/deploy.png)
 
 ## 6. Testing
 ```bash
@@ -159,6 +167,15 @@ npm run test
 yarn test
 ```
 
-## 7. Learn More
+## 7. TODOs
+The syntax below is used to define a clear path forward. IDEs like Jetbrains
+Webstorm and Visual Studio Code support this feature out of the box.
+
+```typescript
+// TODO Something to do
+```
+![todo example WebStorm](./README/todos.png)
+
+## 8. Learn More
 To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
 - [Documentation](https://create.t3.gg/)
