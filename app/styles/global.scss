@@ -40,6 +40,12 @@ body {
   background-color: rgb(var(--foreground-rgb));
 }
 .main-logo {
-  max-width: 100%;
-  height: auto;
+  height: 200px;
+  width: auto;
+  margin: 0 auto 20px auto;
+
+  &.small {
+    height: 140px;
+    margin-bottom: 0;
+  }
 }

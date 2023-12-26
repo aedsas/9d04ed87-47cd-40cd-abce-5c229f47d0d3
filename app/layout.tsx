@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 import { Toaster } from 'react-hot-toast';
 import Cookies from '@/components/Cookies/cookies';
 import { NextAuthProvider } from '@/context/NextAuthProvider';
-import { ReduxProvider } from '@/context/ReduxProvider';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { ReduxProvider } from '@/context/ReduxProvider';
 
 export const metadata: Metadata = {
   title: 'Home | chg Web APP',

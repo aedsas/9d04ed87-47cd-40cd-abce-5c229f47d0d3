@@ -1,13 +1,13 @@
 'use client';
 
-import './counter.scss'
+import './counter.scss';
 import { useEffect } from 'react';
 import { setCounter, decrement, increment } from '@/redux/counterSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
+import type { RootState } from '@/redux/store';
 import { loadState } from '@/redux/localstorage';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid'
+import { PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
 
 export default function ReduxCounter() {
   const count = useSelector((state: RootState) => state.counter.value);
@@ -20,10 +20,10 @@ export default function ReduxCounter() {
       const parsedValue = parseInt(currentCount, 10);
       dispatch(setCounter(parsedValue));
     }
-  }, [dispatch]);
+  }, [persistedState, dispatch]);
 
   const getVariant = (now: number): string => {
-  if (now <= 30) {
+    if (now <= 30) {
       return 'success';
     } else if (now <= 60) {
       return 'info';

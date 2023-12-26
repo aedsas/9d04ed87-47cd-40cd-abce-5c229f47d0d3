@@ -30,6 +30,7 @@
       justify-content: space-between;
       align-items: center;
       align-content: center;
+      text-align: left;
     }
     p,
     .flag {
@@ -45,7 +46,47 @@
       width: 20%;
       height: auto;
       border: 1px solid rgba(230, 230, 230);
-      //min-height: 45px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .languages-wrapper {
+    .nav-item {
+      width: 50%;
+    }
+  }
+  .tab-content {
+    display: flex;
+    align-items: stretch;
+
+    .language-item {
+      width: 50%;
+      padding: 10px;
+      align-self: center;
+
+      .language-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        min-height: 160px;
+        border: 2px solid map-get($brandColors, chg-grey);
+        border-radius: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: map-get($brandColors, chg-grey);
+        }
+      }
+      .flag {
+        width: 50%;
+      }
+      p {
+        padding: 0;
+        margin: 10px 0 0 0;
+        font-weight: bold;
+      }
     }
   }
 }

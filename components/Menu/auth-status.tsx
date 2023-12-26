@@ -1,17 +1,14 @@
-import { useSession } from "next-auth/react"
+import { useSession } from 'next-auth/react';
 
 export default async function AuthStatus() {
   const { data: session } = useSession();
 
-  if(session) {
-    return <>
-      {
-        // @ts-ignore
-        session.user.email
-      }
-    </>
+  if (session?.user && session !== undefined) {
+    return <>{session?.user.email}</>;
   }
-  return <>
-    Not signed in <br/>
-  </>
+  return (
+    <>
+      Not signed in <br />
+    </>
+  );
 }

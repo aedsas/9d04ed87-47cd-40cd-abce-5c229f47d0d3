@@ -1,7 +1,7 @@
 'use client';
 
 import './form.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import LoadingDots from '@/components/LoginForm/loading-dots';
 import LinkedInLogin from '@/components/LoginForm/linkedin-login';
@@ -13,50 +13,66 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
+  const handleSignIn = async (email: string, password: string) => {
+    try {
+      await signIn('credentials', {
+        redirect: false,
+        email,
+        password
+      });
+      router.refresh();
+      router.push('/dashboard');
+    } catch (error: unknown) {
+      setLoading(false);
+      // @ts-expect-error comes from next-auth
+      toast.error(error.message);
+    }
+  };
+
+  const handleRegister = async (email: string, password: string) => {
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (res.status === 200) {
+        toast.success('Account created! Redirecting to login...');
+        setTimeout(() => {
+          router.push('/login');
+        }, 2000);
+      } else {
+        const { error } = await res.json();
+        throw new Error(error);
+      }
+    } catch (error) {
+      setLoading(false);
+      // @ts-expect-error comes from next-auth
+      toast.error(error.message);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget as HTMLFormElement;
+    const email = form.email.value as string;
+    const password = form.password.value as string;
+
+    if (type === 'login') {
+      await handleSignIn(email, password);
+    } else {
+      await handleRegister(email, password);
+    }
+  };
+
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setLoading(true);
-        if (type === 'login') {
-          signIn('credentials', {
-            redirect: false,
-            email: e.currentTarget.email.value,
-            password: e.currentTarget.password.value
-            // @ts-ignore
-          }).then(({ error }) => {
-            if (error) {
-              setLoading(false);
-              toast.error(error);
-            } else {
-              router.refresh();
-              router.push('/dashboard');
-            }
-          });
-        } else {
-          fetch('/api/auth/register', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              email: e.currentTarget.email.value,
-              password: e.currentTarget.password.value
-            })
-          }).then(async (res) => {
-            setLoading(false);
-            if (res.status === 200) {
-              toast.success('Account created! Redirecting to login...');
-              setTimeout(() => {
-                router.push('/login');
-              }, 2000);
-            } else {
-              const { error } = await res.json();
-              toast.error(error);
-            }
-          });
-        }
-      }}
+      onSubmit={handleSubmit}
       className="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16"
     >
       <div className="pb-[2rem]">

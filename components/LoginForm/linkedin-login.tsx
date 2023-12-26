@@ -1,20 +1,24 @@
 'use client';
 
+import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 
 export default function LinkedinLogin() {
-  const handleSignIn = () => {
-    signIn('linkedin').then((r) => console.log(r));
+  const handleSignIn = async () => {
+    try {
+      await signIn('linkedin');
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <>
       <button className={'social-login'} onClick={handleSignIn}>
-        <img
-          style={{ height: '100%', width: '100%' }}
-          src={
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSk3pI2NNjzOZHDLDT5sdKXO1Aqc6sLdo-zZA&usqp=CAU'
-          }
+        <Image
+          src={'/ln.png'}
+          width="300"
+          height="56"
           alt={'LinkedIn authentication'}
         />
       </button>

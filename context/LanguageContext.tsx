@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { ILanguage } from '@/components/LanguageSwitch/ILanguage';
 
-const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextProps | undefined>(
+  undefined
+);
 const languagesUrl = 'https://retoolapi.dev/TkEl3I/countriesdata';
 const defaultLanguagesData = [
-  { id: 1, name: 'Global', region: 'Global', 'alpha-2': 'GLOBAL' },
+  { id: 1, name: 'Global', region: 'Global', 'alpha-2': 'GLB' },
   { id: 2, name: 'Germany', region: 'Europe', 'alpha-2': 'DE' }
 ];
 
@@ -19,7 +21,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const LanguageProvider= ({ children }: Props) => {
+export const LanguageProvider = ({ children }: Props) => {
   const [languagesData, setLanguagesData] = useState<ILanguage[]>([]);
 
   useEffect(() => {
@@ -28,7 +30,10 @@ export const LanguageProvider= ({ children }: Props) => {
         const response = await fetch(languagesUrl);
         const fetchedLanguages = await response.json();
         setLanguagesData([...defaultLanguagesData, ...fetchedLanguages]);
-        localStorage.setItem('languagesData', JSON.stringify([...defaultLanguagesData, ...fetchedLanguages]));
+        localStorage.setItem(
+          'languagesData',
+          JSON.stringify([...defaultLanguagesData, ...fetchedLanguages])
+        );
       } catch (error) {
         console.error('Error fetching languages:', error);
       }
@@ -52,9 +57,9 @@ export const LanguageProvider= ({ children }: Props) => {
 export const useLanguageContext = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguageContext must be used within a LanguageProvider');
+    throw new Error(
+      'useLanguageContext must be used within a LanguageProvider'
+    );
   }
   return context;
 };
-
-

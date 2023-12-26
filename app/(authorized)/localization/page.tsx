@@ -1,6 +1,6 @@
 import MainMenu from '@/components/Menu/main-menu';
 import LanguageSwitch from '@/components/LanguageSwitch/language-switch';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Localization | chg Web APP',
@@ -10,11 +10,14 @@ export const metadata: Metadata = {
 export default function Localization() {
   return (
     <div className="flex items-center justify-center w-full mb-[100px]">
-      <div className="z-10 w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl">
+      <div className="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl">
         <div className="flex flex-col items-center justify-center back-color chg-white p-5 text-center">
-          <MainMenu active='localization'></MainMenu>
+          <MainMenu active="localization"></MainMenu>
           <h1>Localization</h1>
-          <p>The language selector uses a React Context and Local Storage as cache.</p>
+          <p>
+            The language selector uses a React Context and Local Storage as
+            cache.
+          </p>
           <LanguageSwitch></LanguageSwitch>
         </div>
       </div>
