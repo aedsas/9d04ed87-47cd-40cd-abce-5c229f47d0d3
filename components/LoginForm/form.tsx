@@ -15,17 +15,23 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
 
   const handleSignIn = async (email: string, password: string) => {
     try {
-      await signIn('credentials', {
+      const res = await signIn('credentials', {
         redirect: false,
         email,
         password
       });
-      router.refresh();
-      router.push('/dashboard');
+      if (res?.error) {
+        setLoading(false);
+        toast.error(res.error);
+      } else {
+        toast.success('Login successful, redirecting to dashboard...');
+        router.refresh();
+        router.push('/dashboard');
+      }
     } catch (error: unknown) {
       setLoading(false);
-      // @ts-expect-error comes from next-auth
-      toast.error(error.message);
+      console.log(error);
+      toast.error('An error occurred, please try again');
     }
   };
 
@@ -43,7 +49,7 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
         toast.success('Account created! Redirecting to login...');
         setTimeout(() => {
           router.push('/login');
-        }, 2000);
+        }, 1000);
       } else {
         const { error } = await res.json();
         throw new Error(error);
