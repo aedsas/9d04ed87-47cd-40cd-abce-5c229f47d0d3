@@ -26,9 +26,3 @@ model Material {
     amount  Int
     unit String
 }
-
-model Stats {
-    id    Int     @id @default(autoincrement())
-    input_date String
-    amount Float
-}

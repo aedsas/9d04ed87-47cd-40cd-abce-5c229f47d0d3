@@ -23,8 +23,9 @@ export default function Home() {
           </p>
           <p>
             The selected tech includes some technologies that may be redundant
-            in a production environment. This is by design, as the goal of this
-            app is to showcase capabilities.
+            in a production environment (e.g., Boostrap/Tailwind or
+            Redux/Context). This is by design, as the main goal of this app is
+            to showcase capabilities.
           </p>
         </div>
         <div className="flex w-full justify-center py-5">

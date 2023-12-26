@@ -14,7 +14,6 @@ export default function Cookies() {
           <Link
             href={'./legal'}
             className="txt-color chg-green text-[1.3rem] transition-all mx-1 fw-bold"
-            target="_blank"
             rel="noreferrer"
           >
             Cookies and Privacy Policy
