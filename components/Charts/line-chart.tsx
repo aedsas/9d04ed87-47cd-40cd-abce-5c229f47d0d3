@@ -76,7 +76,7 @@ export default function LineChart() {
       const newData = Math.floor(Math.random() * 100);
 
       setChartData((prevChartData: ICharData): ICharData => {
-        const maxPoints: number = 100;
+        const maxPoints = 100;
 
         const newLabels =
           prevChartData.labels.length >= maxPoints
