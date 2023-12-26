@@ -20,6 +20,7 @@ This is by design, as the main goal of this app is to showcase capabilities.
 - [React Bootstrap](https://react-bootstrap.github.io)
 - [React Chart.js 2](https://react-chartjs-2.js.org)
 - [tRPC](https://trpc.io)
+- [Jest](https://jestjs.io)
 
 ### 1.2. Development Tools
 - [Typescript](https://www.typescriptlang.org)
@@ -151,7 +152,13 @@ Follow our deployment guides for
 [Netlify](https://create.t3.gg/en/deployment/netlify) 
 and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
 
+## 6. Testing
+```bash
+npm run test
+# or
+yarn test
+```
 
-## 6. Learn More
+## 7. Learn More
 To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
 - [Documentation](https://create.t3.gg/)

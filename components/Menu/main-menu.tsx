@@ -94,7 +94,7 @@ export default function MainMenu({ active }: { active: string }) {
               <div className={'current-locale'}>
                 <p className="p-0 m-0">({locale})</p>
                 <Image
-                  src={'flags/' + locale.toLowerCase() + '.svg'}
+                  src={'/flags/' + locale?.toLowerCase() ?? 'N/A' + '.svg'}
                   priority
                   alt={locale}
                   width={450}

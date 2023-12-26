@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <main
+    class="flex items-center justify-center w-full mb-[100px]"
+  >
+    <div
+      class="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl"
+    >
+      <div
+        class="border-b back-color chg-white border-gray-200 px-5 py-6"
+      >
+        <img
+          alt="Logo"
+          class="main-logo"
+          data-nimg="1"
+          decoding="async"
+          fetchpriority="high"
+          height="250"
+          src="/_next/image?url=%2Flogo.png&w=640&q=75"
+          srcset="/_next/image?url=%2Flogo.png&w=256&q=75 1x, /_next/image?url=%2Flogo.png&w=640&q=75 2x"
+          style="color: transparent;"
+          width="250"
+        />
+        <h1
+          class="text-center txt-color chg-green"
+        >
+          Hello and welcome
+        </h1>
+        <p
+          class="txt"
+        >
+          This tutorial will guide you through the technical exercise. The main goal of this app is to demonstrate sufficient command of the React ecosystem. The selected stack includes, but is not limited to, the technologies used by chg.
+        </p>
+        <p>
+          The selected tech includes some technologies that may be redundant in a production environment (e.g., Boostrap/Tailwind or Redux/Context). This is by design, as the main goal of this app is to showcase capabilities.
+        </p>
+      </div>
+      <div
+        class="flex w-full justify-center py-5"
+      >
+        <a
+          class="chg-button"
+          href="/login"
+          title="Start!"
+        >
+          <span
+            class="font-bold"
+          >
+            Click here to get started!
+          </span>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`renders legal page unchanged 1`] = `
+<div>
+  <div
+    class="flex items-center justify-center w-full mb-[100px]"
+  >
+    <div
+      class="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl"
+    >
+      <div
+        class="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Logo"
+            class="m-auto my-5"
+            data-nimg="1"
+            decoding="async"
+            fetchpriority="high"
+            height="80"
+            src="/_next/image?url=%2Flogo.png&w=256&q=75"
+            srcset="/_next/image?url=%2Flogo.png&w=96&q=75 1x, /_next/image?url=%2Flogo.png&w=256&q=75 2x"
+            style="color: transparent;"
+            width="80"
+          />
+        </a>
+        <h3>
+          Legal
+        </h3>
+        <p
+          class="w-[80%] text-gray-500"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mi dolor, semper ut accumsan ut, imperdiet sit amet mauris. Nam sit amet feugiat orci. Nulla interdum placerat metus eget aliquet. Vivamus id nunc tellus. Nunc ac cursus neque, non consectetur odio. Phasellus venenatis, felis vel dictum viverra, mauris lacus sagittis risus, a imperdiet justo odio eget purus. Nulla facilisi. Curabitur lacinia nunc lectus, non bibendum ex pharetra in. Etiam est erat, pharetra sit amet scelerisque ac, convallis et libero. Nunc imperdiet, nibh a vehicula volutpat, est lectus malesuada odio, id fermentum orci elit et elit. Sed elementum nulla ante, sed maximus felis malesuada sed. Curabitur ut leo vitae dolor tincidunt aliquet vel eget velit. Nulla a orci eget purus rutrum fermentum.
+        </p>
+        <p
+          class="w-[80%] text-gray-500"
+        >
+          Ut venenatis blandit lectus, et pharetra odio volutpat et. Quisque facilisis felis eu convallis faucibus. Fusce varius varius mollis. Aliquam eget magna feugiat, scelerisque nulla laoreet, sodales tortor. Vivamus consequat eros eu elit porttitor facilisis. Phasellus suscipit erat sed ligula posuere, id sollicitudin mauris interdum. Nulla et justo mi. Sed vulputate urna vitae imperdiet interdum. Pellentesque dui tellus, euismod ut lorem vel, tincidunt fringilla dolor. Sed sollicitudin, sem eget ullamcorper tincidunt, est turpis bibendum urna, tincidunt volutpat ante erat at mi. Donec dapibus elementum est a viverra. Proin pharetra sem sollicitudin ante congue congue. Aliquam et libero nunc. Curabitur odio nulla, mattis in porta eget, accumsan id odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque magna diam, finibus vel vehicula a, scelerisque non nisl.
+        </p>
+        <p
+          class="w-[80%] text-gray-500"
+        >
+          Suspendisse tempus laoreet lorem vel malesuada. Aenean eget purus malesuada, porttitor felis et, porttitor sapien. Vivamus iaculis libero lacus, nec tempor dui gravida imperdiet. Sed efficitur turpis vel lectus porta, dapibus fermentum risus dictum. Duis quis enim ut ex lobortis sagittis at nec est. Phasellus et lectus eget neque mollis viverra. Fusce quis egestas dolor. Nam bibendum turpis sed egestas maximus. Nullam a neque a magna auctor eleifend sed sit amet nisl. Vivamus mattis, neque id tincidunt aliquet, tellus tortor cursus lorem, ut vestibulum nisl nisl vel est. Nulla efficitur porta leo, eu imperdiet sapien mattis vel. Vivamus consectetur nulla id porttitor blandit. Nam et porttitor libero. Aenean vel ligula dui. Nam vel eros tempor, laoreet magna ut, ultricies lectus.
+        </p>
+        <p
+          class="w-[80%] text-gray-500"
+        >
+          Donec ac congue diam, at venenatis leo. Aliquam sodales nulla eget augue egestas, in ornare mauris scelerisque. Sed hendrerit diam ipsum, aliquet porta metus rutrum at. Proin sit amet cursus diam, quis mattis nulla. Maecenas et dolor vel augue fringilla porttitor eget et nulla. Pellentesque id enim eget ipsum suscipit finibus ut ut sapien. Suspendisse gravida volutpat justo ut rutrum. Donec ut orci porta, imperdiet nisl ut, cursus purus. Etiam blandit, massa non sollicitudin bibendum, quam felis scelerisque massa, at aliquam nulla sapien in est. Donec a vestibulum felis, elementum tempus nulla.
+        </p>
+        <p
+          class="w-[80%] text-gray-500"
+        >
+          Morbi finibus quis nibh eu malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus euismod tempus. Duis nec nibh non felis maximus dictum nec ut ipsum. Praesent eget euismod dolor. Pellentesque commodo augue vel neque laoreet ornare. Nulla sed nisl gravida, viverra nulla a, accumsan risus. Nullam laoreet nunc at magna dignissim, at placerat nisl condimentum.
+        </p>
+        <a
+          class="chg-button"
+          href="./dashboard"
+        >
+          <span>
+            Go back
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders login page unchanged 1`] = `
+<div>
+  <div
+    class="flex items-center justify-center w-full mb-[100px]"
+  >
+    <div
+      class="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl"
+    >
+      <div
+        class="flex flex-col items-center justify-center back-color chg-white p-5 text-center"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Logo"
+            class="main-logo small"
+            data-nimg="1"
+            decoding="async"
+            fetchpriority="high"
+            height="250"
+            src="/_next/image?url=%2Flogo.png&w=640&q=75"
+            srcset="/_next/image?url=%2Flogo.png&w=256&q=75 1x, /_next/image?url=%2Flogo.png&w=640&q=75 2x"
+            style="color: transparent;"
+            width="250"
+          />
+        </a>
+        <h1>
+          Please sign in to continue
+        </h1>
+        <p
+          class="w-[80%] text-gray-500"
+        >
+          To simulate a business application with a customer portal the rest of the exercise can only be accessed by authenticated users.
+        </p>
+        <p>
+          Please use your email and password to sign in:
+        </p>
+      </div>
+      <form
+        class="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16"
+      >
+        <div
+          class="pb-[2rem]"
+        >
+          <label
+            class="block text-[1.4rem] text-gray-600 uppercase"
+            for="email"
+          >
+            Email Address
+          </label>
+          <input
+            autocomplete="email"
+            class="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
+            id="email"
+            name="email"
+            placeholder="andres@chg.com"
+            required=""
+            type="email"
+          />
+        </div>
+        <div
+          class="pb-[2.5rem]"
+        >
+          <label
+            class="block text-[1.4rem] text-gray-600 uppercase"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            class="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
+            id="password"
+            name="password"
+            required=""
+            type="password"
+          />
+        </div>
+        <div
+          class="text-center"
+        >
+          <button
+            class=" chg-button"
+          >
+            <span
+              class="block text-[1.4rem] text-gray-600 uppercase"
+            >
+              Sign In
+            </span>
+          </button>
+          <button
+            class="social-login"
+          >
+            <img
+              alt="LinkedIn authentication"
+              data-nimg="1"
+              decoding="async"
+              height="56"
+              loading="lazy"
+              src="/_next/image?url=%2Fln.png&w=640&q=75"
+              srcset="/_next/image?url=%2Fln.png&w=384&q=75 1x, /_next/image?url=%2Fln.png&w=640&q=75 2x"
+              style="color: transparent;"
+              width="300"
+            />
+          </button>
+          <p
+            class="text-center text-gray-600"
+          >
+            You don't have a chg account yet?
+             
+            <a
+              class="txt-color chg-green text-[1.5rem] text-bold text-uppercase text-decoration-underline"
+              href="/register"
+            >
+              Sign up here.
+            </a>
+             
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders register page unchanged 1`] = `
+<div>
+  <div
+    class="flex items-center justify-center w-full mb-[100px]"
+  >
+    <div
+      class="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl"
+    >
+      <div
+        class="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Logo"
+            class="main-logo small"
+            data-nimg="1"
+            decoding="async"
+            fetchpriority="high"
+            height="250"
+            src="/_next/image?url=%2Flogo.png&w=640&q=75"
+            srcset="/_next/image?url=%2Flogo.png&w=256&q=75 1x, /_next/image?url=%2Flogo.png&w=640&q=75 2x"
+            style="color: transparent;"
+            width="250"
+          />
+        </a>
+        <h1>
+          Sign Up
+        </h1>
+        <p
+          class="w-[80%] text-gray-500"
+        >
+          Create an account with your email and password
+        </p>
+      </div>
+      <form
+        class="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16"
+      >
+        <div
+          class="pb-[2rem]"
+        >
+          <label
+            class="block text-[1.4rem] text-gray-600 uppercase"
+            for="email"
+          >
+            Email Address
+          </label>
+          <input
+            autocomplete="email"
+            class="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
+            id="email"
+            name="email"
+            placeholder="andres@chg.com"
+            required=""
+            type="email"
+          />
+        </div>
+        <div
+          class="pb-[2.5rem]"
+        >
+          <label
+            class="block text-[1.4rem] text-gray-600 uppercase"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            class="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
+            id="password"
+            name="password"
+            required=""
+            type="password"
+          />
+        </div>
+        <div
+          class="text-center"
+        >
+          <button
+            class=" chg-button"
+          >
+            <span
+              class="block text-[1.4rem] text-gray-600 uppercase"
+            >
+              Sign Up
+            </span>
+          </button>
+          <button
+            class="social-login"
+          >
+            <img
+              alt="LinkedIn authentication"
+              data-nimg="1"
+              decoding="async"
+              height="56"
+              loading="lazy"
+              src="/_next/image?url=%2Fln.png&w=640&q=75"
+              srcset="/_next/image?url=%2Fln.png&w=384&q=75 1x, /_next/image?url=%2Fln.png&w=640&q=75 2x"
+              style="color: transparent;"
+              width="300"
+            />
+          </button>
+          <p
+            class="text-center text-gray-600"
+          >
+            You already have an account?
+             
+            <a
+              class="txt-color chg-green text-[1.5rem] text-bold text-uppercase text-decoration-underline"
+              href="/login"
+            >
+              Sign in here
+            </a>
+             
+            instead.
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
