@@ -76,15 +76,19 @@ export default function LineChart() {
       const newData = Math.floor(Math.random() * 100);
 
       setChartData((prevChartData: ICharData): ICharData => {
+        const maxPoints: number = 100;
+
         const newLabels =
-          prevChartData.labels.length >= 100
+          prevChartData.labels.length >= maxPoints
             ? [...prevChartData.labels.slice(1), newLabel]
             : [...prevChartData.labels, newLabel];
 
         const newDataPoints =
-          prevChartData.datasets[0]?.data.length ?? 0 >= 100
-            ? [...(prevChartData.datasets[0]?.data?.slice(1) ?? []), newData]
-            : [...(prevChartData.datasets[0]?.data ?? []), newData];
+          prevChartData.labels.length >= maxPoints
+            ? // @ts-expect-error not relevant for current scope
+              [...prevChartData.datasets[0].data.slice(1), newData]
+            : // @ts-expect-error not relevant for current scope
+              [...(prevChartData.datasets[0].data ?? 100), newData];
 
         return {
           labels: newLabels,
@@ -102,7 +106,7 @@ export default function LineChart() {
           ]
         };
       });
-    }, 2000);
+    }, 1000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);

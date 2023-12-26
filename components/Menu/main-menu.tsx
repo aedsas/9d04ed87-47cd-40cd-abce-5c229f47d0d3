@@ -78,9 +78,9 @@ export default function MainMenu({ active }: { active: string }) {
                 </Suspense>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item className={'nav-link'}>
+              <NavDropdown.ItemText className={'nav-link sign-out-link'}>
                 <SignOut />
-              </NavDropdown.Item>
+              </NavDropdown.ItemText>
             </NavDropdown>
           </Nav>
           <Nav>

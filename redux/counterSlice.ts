@@ -17,13 +17,12 @@ export const counterSlice = createSlice({
       state.value = action.payload;
     },
     increment: (state) => {
-      console.log(state.value);
-      if (state.value >= 0 && state.value <= 90){
+      if (state.value >= 0 && state.value <= 90) {
         state.value += 10;
       }
     },
     decrement: (state) => {
-      if (state.value >= 10){
+      if (state.value >= 10) {
         state.value -= 10;
       }
     }

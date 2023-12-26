@@ -1,6 +1,6 @@
 @import '@/app/styles/_variables.scss';
 
-#mainMenu{
+#mainMenu {
   font-size: 1.4rem;
 
   .nav-link {
@@ -15,14 +15,27 @@
       color: map-get($brandColors, chg-green);
     }
   }
-  .dropdown-toggle::after{
+  .dropdown-toggle::after {
     position: relative;
     top: 8px;
+  }
+  .sign-out-link {
+    padding: 0;
+
+    .sign-out-button {
+      width: 100%;
+      height: 100%;
+      padding: 10px 15px;
+      text-align: left;
+
+      &:hover {
+        background-color: map-get($brandColors, chg-green);
+      }
+    }
   }
 }
 .current-locale {
   display: flex;
-  //width: 150px;
   justify-content: space-between;
   align-items: center;
 
