@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-export default function Form({ type }: { type: 'login' | 'register' }) {
+export default function Form({ type }: { type: string }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -46,10 +46,17 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
       });
 
       if (res.status === 200) {
-        toast.success('Account created! Redirecting to login...');
-        setTimeout(() => {
-          router.push('/login');
-        }, 1000);
+        toast.success('Account created! Redirecting...');
+
+        if (type === 'register') {
+          setTimeout(() => {
+            router.push('/login');
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            router.push('/admin');
+          }, 500);
+        }
       } else {
         const { error } = await res.json();
         throw new Error(error);
@@ -79,7 +86,7 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16"
+      className="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16 w-100"
     >
       <div className="pb-[2rem]">
         <label
@@ -90,6 +97,7 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
         </label>
         <input
           id="email"
+          data-testid="email-input"
           name="email"
           type="email"
           placeholder="andres@chg.com"
@@ -108,6 +116,7 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
         </label>
         <input
           id="password"
+          data-testid="password-input"
           name="password"
           type="password"
           required
@@ -126,11 +135,17 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
             <LoadingDots color="#808080" />
           ) : (
             <span className="block text-[1.4rem] text-gray-600 uppercase">
-              {type === 'login' ? 'Sign In' : 'Sign Up'}
+              {type === 'login'
+                ? 'Sign In'
+                : type === 'register'
+                  ? 'Sign Up'
+                  : 'Add User'}
             </span>
           )}
         </button>
-        <LinkedInLogin></LinkedInLogin>
+
+        {type !== 'admin' ? <LinkedInLogin></LinkedInLogin> : ''}
+
         {type === 'login' ? (
           <p className="text-center text-gray-600">
             You don&apos;t have a chg account yet?{' '}
@@ -142,6 +157,10 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
             </Link>{' '}
           </p>
         ) : (
+          ''
+        )}
+
+        {type === 'register' ? (
           <p className="text-center text-gray-600">
             You already have an account?{' '}
             <Link
@@ -152,6 +171,8 @@ export default function Form({ type }: { type: 'login' | 'register' }) {
             </Link>{' '}
             instead.
           </p>
+        ) : (
+          ''
         )}
       </div>
     </form>

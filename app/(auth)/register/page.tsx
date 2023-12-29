@@ -12,7 +12,7 @@ export default function Login() {
   return (
     <div className="flex items-center justify-center w-full mb-[100px]">
       <div className="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl">
-        <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
+        <section className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
           <Link href="/">
             <Image
               src="/logo.png"
@@ -23,11 +23,11 @@ export default function Login() {
               height={250}
             />
           </Link>
-          <h1>Sign Up</h1>
+          <h1>Create New CHG Account</h1>
           <p className="w-[80%] text-gray-500">
             Create an account with your email and password
           </p>
-        </div>
+        </section>
         <Form type="register" />
       </div>
     </div>

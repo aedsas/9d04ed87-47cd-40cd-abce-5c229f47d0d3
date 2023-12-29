@@ -44,13 +44,20 @@ export default function MainMenu({ active }: { active: string }) {
     >
       <Container>
         <Navbar.Brand>
-          <b>CHG APP {active}</b>
+          <Image
+            src="/logo.png"
+            priority
+            alt="Logo"
+            className="main-logo main-menu mb-0"
+            width={250}
+            height={250}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link href={'/'} title={'Home'} className={'nav-link'}>
-              <HomeIcon /> <span>Home</span>
+              <HomeIcon /> <span>CHG Home</span>
             </Link>
             <Link
               href={'/dashboard'}
@@ -94,7 +101,7 @@ export default function MainMenu({ active }: { active: string }) {
               <div className={'current-locale'}>
                 <p className="p-0 m-0">({locale})</p>
                 <Image
-                  src={'/flags/' + locale?.toLowerCase() ?? 'N/A' + '.svg'}
+                  src={'/flags/' + locale?.toLowerCase() + '.svg'}
                   priority
                   alt={locale}
                   width={450}

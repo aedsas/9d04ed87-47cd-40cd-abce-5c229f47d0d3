@@ -3,6 +3,10 @@
 #mainMenu {
   font-size: 1.4rem;
 
+  .main-menu {
+    height: 50px;
+    width: auto;
+  }
   .nav-link {
     display: flex;
     padding: 10px 15px;

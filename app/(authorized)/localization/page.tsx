@@ -11,7 +11,7 @@ export default function Localization() {
   return (
     <div className="flex items-center justify-center w-full mb-[100px]">
       <div className="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl">
-        <div className="flex flex-col items-center justify-center back-color chg-white p-5 text-center">
+        <section className="flex flex-col items-center justify-center back-color chg-white p-5 text-center">
           <MainMenu active="localization"></MainMenu>
           <h1>Localization</h1>
           <p>
@@ -19,7 +19,7 @@ export default function Localization() {
             cache.
           </p>
           <LanguageSwitch></LanguageSwitch>
-        </div>
+        </section>
       </div>
     </div>
   );

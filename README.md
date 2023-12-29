@@ -1,6 +1,4 @@
 # CHG App - Technical Exercise
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
-
 For testing purposes, this App has been deployed to the url:
 [https://chg.axioma.ai](https://chg.axioma.ai)
 
@@ -24,7 +22,6 @@ This is by design, as the main goal of this app is to showcase capabilities.
 - [Sass](https://sass-lang.com)
 - [React Bootstrap](https://react-bootstrap.github.io)
 - [React Chart.js 2](https://react-chartjs-2.js.org)
-- [tRPC](https://trpc.io)
 - [Jest](https://jestjs.io)
 
 ### 1.2. Development Tools
@@ -51,7 +48,9 @@ After verifying that the supported versions are installed, we can install
 the project dependencies (listed in package.json) by running the command:
 ```bash
 npm install
-# or
+```
+Or
+```bash
 yarn install
 ```
 **Note:** yarn is preferred, as it has been tested during the development process.
@@ -121,12 +120,15 @@ To use the Postgres container, please use the following connection string:
 **Note:** the standard port 5432 has been changed to 5433 to avoid conflicts
 with other Postgres installations.
 
+![Docker Image Running](./README/docker.png)
 
 ## 4. Run Development Server
 To test or develop the application, please use the following command:
 ```bash
 npm run dev
-# or
+```
+Or
+```bash
 yarn dev
 ```
 After running it your can open [http://localhost:3000](http://localhost:3000) 
@@ -137,7 +139,9 @@ with your browser to see the result.
 To create a production build, please run
 ```bash
 npm run build
-# or
+```
+Or
+```bash
 yarn build
 ```
 
@@ -145,7 +149,9 @@ yarn build
 Once you have created a production build, you can test it by running:
 ```bash
 npm run start
-# or
+```
+Or
+```bash
 yarn start
 ```
 After running it your can open [http://localhost:3000](http://localhost:3000) 
@@ -163,9 +169,18 @@ The project as been tested and configured for CI/CD via Vercel:
 ## 6. Testing
 ```bash
 npm run test
-# or
+```
+Or
+```bash
 yarn test
 ```
+For the time being, there two simple types of test where implemented:
+- Render: Checks that the component renders and that key elements are displayed.
+- Snapshot: Check if the render has changed to guarantee the UI remains the same.
+  - This is a good extra way to protect pages that are approved and working.
+
+**Current Tests Status:**
+![Vercel Automatic Deployments](./README/tests.png)
 
 ## 7. TODOs
 The syntax below is used to define a clear path forward. IDEs like Jetbrains

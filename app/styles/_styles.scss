@@ -74,9 +74,26 @@ a:hover {
     padding-right: 2rem;
     background-color: map-get($brandColors, chg-green);
   }
+  &.static-link:hover {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: map-get($brandColors, chg-green);
+  }
   &.small-button {
-    padding: 0.1rem 0.5rem;
+    padding: 0.2rem 0.8rem;
     color: map-get($brandColors, chg-white);
+  }
+  &.icon-link {
+    svg {
+      min-height: 2rem;
+      max-height: 2rem;
+      color: map-get($brandColors, chg-white);
+    }
+  }
+  &.danger,
+  &.danger:hover {
+    cursor: not-allowed;
+    background-color: map-get($brandColors, chg-red);
   }
 }
 

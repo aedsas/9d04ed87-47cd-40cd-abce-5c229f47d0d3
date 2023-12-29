@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import 'jest-localstorage-mock';
 import { TextEncoder, TextDecoder } from 'util';
 if (typeof global.TextEncoder === 'undefined') {
   global.TextEncoder = TextEncoder;

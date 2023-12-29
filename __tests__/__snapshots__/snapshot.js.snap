@@ -8,7 +8,7 @@ exports[`renders homepage unchanged 1`] = `
     <div
       class="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl"
     >
-      <div
+      <section
         class="border-b back-color chg-white border-gray-200 px-5 py-6"
       >
         <img
@@ -36,8 +36,8 @@ exports[`renders homepage unchanged 1`] = `
         <p>
           The selected tech includes some technologies that may be redundant in a production environment (e.g., Boostrap/Tailwind or Redux/Context). This is by design, as the main goal of this app is to showcase capabilities.
         </p>
-      </div>
-      <div
+      </section>
+      <section
         class="flex w-full justify-center py-5"
       >
         <a
@@ -51,7 +51,7 @@ exports[`renders homepage unchanged 1`] = `
             Click here to get started!
           </span>
         </a>
-      </div>
+      </section>
     </div>
   </main>
 </div>
@@ -59,13 +59,13 @@ exports[`renders homepage unchanged 1`] = `
 
 exports[`renders legal page unchanged 1`] = `
 <div>
-  <div
+  <main
     class="flex items-center justify-center w-full mb-[100px]"
   >
     <div
       class="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl"
     >
-      <div
+      <section
         class="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16"
       >
         <a
@@ -84,9 +84,9 @@ exports[`renders legal page unchanged 1`] = `
             width="80"
           />
         </a>
-        <h3>
+        <h1>
           Legal
-        </h3>
+        </h1>
         <p
           class="w-[80%] text-gray-500"
         >
@@ -120,21 +120,21 @@ exports[`renders legal page unchanged 1`] = `
             Go back
           </span>
         </a>
-      </div>
+      </section>
     </div>
-  </div>
+  </main>
 </div>
 `;
 
 exports[`renders login page unchanged 1`] = `
 <div>
-  <div
+  <main
     class="flex items-center justify-center w-full mb-[100px]"
   >
     <div
       class="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl"
     >
-      <div
+      <section
         class="flex flex-col items-center justify-center back-color chg-white p-5 text-center"
       >
         <a
@@ -164,9 +164,9 @@ exports[`renders login page unchanged 1`] = `
         <p>
           Please use your email and password to sign in:
         </p>
-      </div>
+      </section>
       <form
-        class="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16"
+        class="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16 w-100"
       >
         <div
           class="pb-[2rem]"
@@ -180,6 +180,7 @@ exports[`renders login page unchanged 1`] = `
           <input
             autocomplete="email"
             class="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
+            data-testid="email-input"
             id="email"
             name="email"
             placeholder="andres@chg.com"
@@ -198,6 +199,7 @@ exports[`renders login page unchanged 1`] = `
           </label>
           <input
             class="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
+            data-testid="password-input"
             id="password"
             name="password"
             required=""
@@ -247,7 +249,7 @@ exports[`renders login page unchanged 1`] = `
         </div>
       </form>
     </div>
-  </div>
+  </main>
 </div>
 `;
 
@@ -259,7 +261,7 @@ exports[`renders register page unchanged 1`] = `
     <div
       class="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl"
     >
-      <div
+      <section
         class="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16"
       >
         <a
@@ -279,16 +281,16 @@ exports[`renders register page unchanged 1`] = `
           />
         </a>
         <h1>
-          Sign Up
+          Create New CHG Account
         </h1>
         <p
           class="w-[80%] text-gray-500"
         >
           Create an account with your email and password
         </p>
-      </div>
+      </section>
       <form
-        class="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16"
+        class="chg-form flex flex-col bg-gray-50 px-4 py-8 sm:px-16 w-100"
       >
         <div
           class="pb-[2rem]"
@@ -302,6 +304,7 @@ exports[`renders register page unchanged 1`] = `
           <input
             autocomplete="email"
             class="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
+            data-testid="email-input"
             id="email"
             name="email"
             placeholder="andres@chg.com"
@@ -320,6 +323,7 @@ exports[`renders register page unchanged 1`] = `
           </label>
           <input
             class="text-[1.4rem] mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black"
+            data-testid="password-input"
             id="password"
             name="password"
             required=""

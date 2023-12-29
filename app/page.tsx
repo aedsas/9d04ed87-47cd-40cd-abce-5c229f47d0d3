@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="flex items-center justify-center w-full mb-[100px]">
       <div className="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl">
-        <div className="border-b back-color chg-white border-gray-200 px-5 py-6">
+        <section className="border-b back-color chg-white border-gray-200 px-5 py-6">
           <Image
             src="/logo.png"
             priority
@@ -27,12 +27,12 @@ export default function Home() {
             Redux/Context). This is by design, as the main goal of this app is
             to showcase capabilities.
           </p>
-        </div>
-        <div className="flex w-full justify-center py-5">
+        </section>
+        <section className="flex w-full justify-center py-5">
           <Link href="/login" title="Start!" className="chg-button">
             <span className="font-bold">Click here to get started!</span>
           </Link>
-        </div>
+        </section>
       </div>
     </main>
   );

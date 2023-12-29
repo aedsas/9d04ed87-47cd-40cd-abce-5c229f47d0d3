@@ -26,6 +26,7 @@ export const LanguageProvider = ({ children }: Props) => {
 
   useEffect(() => {
     const fetchLanguages = async () => {
+      // TODO Use Exceptions instead of Try/Catch Blocks
       try {
         const response = await fetch(languagesUrl);
         const fetchedLanguages = await response.json();
@@ -39,12 +40,16 @@ export const LanguageProvider = ({ children }: Props) => {
       }
     };
 
-    const cachedData = localStorage.getItem('languagesData');
-    if (cachedData) {
-      setLanguagesData(JSON.parse(cachedData));
-    } else {
-      fetchLanguages();
-    }
+    const fetchData = async () => {
+      const cachedData = localStorage.getItem('languagesData');
+      if (cachedData) {
+        setLanguagesData(JSON.parse(cachedData));
+      } else {
+        await fetchLanguages();
+      }
+    };
+
+    fetchData().then((r) => console.log(r));
   }, []);
 
   return (

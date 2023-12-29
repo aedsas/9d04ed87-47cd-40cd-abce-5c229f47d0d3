@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function Login() {
   return (
-    <div className="flex items-center justify-center w-full mb-[100px]">
+    <main className="flex items-center justify-center w-full mb-[100px]">
       <div className="z-10 w-11/12 md:w-10/12 xl:w-8/12 m-auto mt-5 rounded border border-gray-200 shadow-xl">
-        <div className="flex flex-col items-center justify-center back-color chg-white p-5 text-center">
+        <section className="flex flex-col items-center justify-center back-color chg-white p-5 text-center">
           <Link href="/">
             <Image
               src="/logo.png"
@@ -29,9 +29,9 @@ export default function Login() {
             of the exercise can only be accessed by authenticated users.
           </p>
           <p>Please use your email and password to sign in:</p>
-        </div>
+        </section>
         <Form type="login" />
       </div>
-    </div>
+    </main>
   );
 }
