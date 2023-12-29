@@ -9,6 +9,8 @@ import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+// TODO Use separate forms for Auth and User CRUD or use shared smaller component
+
 export default function Form({ type }: { type: string }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();

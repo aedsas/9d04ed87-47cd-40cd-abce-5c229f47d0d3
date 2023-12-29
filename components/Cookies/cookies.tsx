@@ -2,6 +2,8 @@ import { cookies } from 'next/headers';
 import DismissButton from './dismiss-button';
 import Link from 'next/link';
 
+// TODO Implement Cookies Self-management Tool
+
 export default function Cookies() {
   const cookieStore = cookies();
   const isHidden = cookieStore.get('cookies-banner-hidden');

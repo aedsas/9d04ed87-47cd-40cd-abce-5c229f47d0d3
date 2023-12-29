@@ -6,12 +6,16 @@ import Cookies from '@/components/Cookies/cookies';
 import { NextAuthProvider } from '@/context/NextAuthProvider';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ReduxProvider } from '@/context/ReduxProvider';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Home | chg Web APP',
   description:
     'Technical Exercise aiming to demonstrate ' +
     'sufficient command of Next.js, React and Redux.'
+  // TODO Add OG and Cards Metadata
+  // TODO make lang attribute dynamic
 };
 
 export default function RootLayout({
@@ -26,11 +30,11 @@ export default function RootLayout({
         <Cookies></Cookies>
         <NextAuthProvider>
           <LanguageProvider>
-            <ReduxProvider>
-              {children}
-            </ReduxProvider>
+            <ReduxProvider>{children}</ReduxProvider>
           </LanguageProvider>
         </NextAuthProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

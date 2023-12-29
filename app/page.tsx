@@ -15,6 +15,7 @@ export default function Home() {
             height={250}
           />
           <h1 className="text-center txt-color chg-green">Hello and welcome</h1>
+          {/* TODO All texts should be loaded from a JSON file that can be localized */}
           <p className="txt">
             This tutorial will guide you through the technical exercise. The
             main goal of this app is to demonstrate sufficient command of the

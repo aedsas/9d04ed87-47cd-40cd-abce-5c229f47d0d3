@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma';
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions } from 'next-auth';
 import { compare } from 'bcrypt';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import LinkedInProvider from 'next-auth/providers/linkedin';
@@ -48,6 +48,7 @@ export const authOptions: NextAuthOptions = {
         };
       }
     })
+    // TODO Add Google and Microsoft Providers
   ],
   pages: {
     signIn: '/login'

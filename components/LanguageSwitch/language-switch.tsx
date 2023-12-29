@@ -10,6 +10,10 @@ import { useDispatch } from 'react-redux';
 import { useLanguageContext } from '@/context/LanguageContext';
 import type { ILanguage } from '@/components/LanguageSwitch/ILanguage';
 
+// TODO Use either Context or Redux for all localization related functionality.
+// For the exercise the implementation uses both, but it real projects it is
+// advised to use one approach at a time.
+
 export default function LanguageSwitch() {
   const dispatch = useDispatch();
   const { languagesData } = useLanguageContext();

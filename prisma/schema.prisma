@@ -19,10 +19,3 @@ model User {
   email String  @unique
   password  String
 }
-
-model Material {
-    id    Int     @id @default(autoincrement())
-    name  String
-    amount  Int
-    unit String
-}
