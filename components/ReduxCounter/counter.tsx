@@ -14,6 +14,7 @@ export default function ReduxCounter() {
   const persistedState = loadState();
   const dispatch = useDispatch();
 
+  // Load the persisted state from local storage
   useEffect(() => {
     const currentCount = persistedState?.counter.value ?? 10;
     if (currentCount !== null) {
@@ -22,6 +23,7 @@ export default function ReduxCounter() {
     }
   }, [persistedState, dispatch]);
 
+  // Calculate the variant for the progress bar - Defines the color
   const getVariant = (now: number): string => {
     if (now <= 30) {
       return 'success';

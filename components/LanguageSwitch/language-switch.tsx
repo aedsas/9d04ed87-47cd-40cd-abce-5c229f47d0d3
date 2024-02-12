@@ -15,9 +15,11 @@ import type { ILanguage } from '@/components/LanguageSwitch/ILanguage';
 // advised to use one approach at a time.
 
 export default function LanguageSwitch() {
-  const dispatch = useDispatch();
+  // The country data fetched from API is saved in local storage and accessed via Context
   const { languagesData } = useLanguageContext();
+  const dispatch = useDispatch();
 
+  // The locale indicator in the Menu uses Redux, so must be set using its reducer action
   const handleLanguageItemClick = (
     event: React.MouseEvent,
     language: ILanguage
@@ -26,6 +28,7 @@ export default function LanguageSwitch() {
     dispatch(setLocale(language['alpha-2']));
   };
 
+  // Reshape country data fetched by API and managed by Context into regions
   const languagesPerRegion = languagesData.reduce(
     (result: Record<string, ILanguage[]>, item: ILanguage) => {
       const { region } = item;
@@ -39,6 +42,8 @@ export default function LanguageSwitch() {
     },
     {}
   );
+
+  // Sorting those resulting regions alphabetically
   const sortedRegions = Object.keys(languagesPerRegion).sort();
 
   return (

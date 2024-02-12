@@ -76,7 +76,7 @@ Your configuration should look similar to:
 ![linkedin configuration](./README/auth-linked-config.png)
 
 **Note:** # Verify that the authorized url matches your current setting and
-do not forget to add /api/auth/callback/linkedin
+do not forget to add LinkedIn callback
 
 E.g., http://localhost:3000/api/auth/callback/linkedins
 
@@ -94,7 +94,7 @@ to sync the database schema:
 prisma db push
 ```
 
-And afterwards, let's create the super admin user by running the 
+And afterward, let's create the super admin user by running the 
 seed data provided.
 ```bash
 prisma db seed
@@ -115,7 +115,7 @@ docker ps -a
 
 To use the Postgres container, please use the following connection string:
 ```dotenv
-"postgresql://postgres:postgres@localhost:5433/chg_app"
+POSTGRES_PRISMA_URL="postgresql://postgres:postgres@localhost:5433/chg_app"
 ```
 **Note:** the standard port 5432 has been changed to 5433 to avoid conflicts
 with other Postgres installations.
@@ -123,6 +123,8 @@ with other Postgres installations.
 ![Docker Image Running](./README/docker.png)
 
 ## 4. Run Development Server
+
+### 4.1. Start the development server
 To test or develop the application, please use the following command:
 ```bash
 npm run dev

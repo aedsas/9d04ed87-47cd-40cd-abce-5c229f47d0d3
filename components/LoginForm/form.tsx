@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 // TODO Use separate forms for Auth and User CRUD or use shared smaller component
+// TODO Use Zod to validate form inputs
 
 export default function Form({ type }: { type: string }) {
   const [loading, setLoading] = useState(false);

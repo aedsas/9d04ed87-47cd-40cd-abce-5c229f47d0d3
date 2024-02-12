@@ -1,14 +1,15 @@
 import { useSession } from 'next-auth/react';
 
-export default async function AuthStatus() {
-  const { data: session } = useSession();
+export default function AuthStatus() {
+  const { data: session, status } = useSession();
 
-  if (session?.user && session !== undefined) {
-    return <>{session?.user.email}</>;
+  if (status === 'loading') {
+    return <>Loading...</>;
   }
-  return (
-    <>
-      Not signed in <br />
-    </>
-  );
+
+  if (!session) {
+    return <>Not signed in</>;
+  }
+
+  return <>{session?.user?.email}</>;
 }

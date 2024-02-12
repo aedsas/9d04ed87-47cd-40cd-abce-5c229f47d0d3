@@ -5,6 +5,6 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  const list = await prisma.user.findMany();
+  const list = await prisma.task.findMany();
   return NextResponse.json(list);
 }

@@ -49,7 +49,9 @@ export const LanguageProvider = ({ children }: Props) => {
       }
     };
 
-    fetchData().then((r) => console.log(r));
+    (async () => {
+      await fetchData();
+    })();
   }, []);
 
   return (

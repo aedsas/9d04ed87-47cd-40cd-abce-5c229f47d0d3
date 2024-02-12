@@ -7,6 +7,7 @@ declare global {
 
 const prisma = global.prisma ?? new PrismaClient();
 
+// Only create a single connection in development mode
 if (process.env.NODE_ENV === 'development') global.prisma = prisma;
 
 export default prisma;

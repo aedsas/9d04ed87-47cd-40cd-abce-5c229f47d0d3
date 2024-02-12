@@ -26,6 +26,7 @@ export default function MainMenu({ active }: { active: string }) {
   const persistedState = loadState();
   const dispatch = useDispatch();
 
+  // Load the persisted state from local storage - Display the current locale
   useEffect(() => {
     const currentLocale =
       (persistedState?.locale.value as string) ?? ('DE' as string);
@@ -74,6 +75,13 @@ export default function MainMenu({ active }: { active: string }) {
               className={active === 'admin' ? 'nav-link active' : 'nav-link'}
             >
               <AdjustmentsHorizontalIcon /> <span>Admin</span>
+            </Link>
+            <Link
+              href={'/todos'}
+              title={'Todos'}
+              className={active === 'todos' ? 'nav-link active' : 'nav-link'}
+            >
+              <AdjustmentsHorizontalIcon /> <span>Todos</span>
             </Link>
             <NavDropdown title="Account" id="collapsible-nav-dropdown">
               <NavDropdown.Item className={'nav-link'}>
